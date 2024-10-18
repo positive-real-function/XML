@@ -30,6 +30,7 @@
 
 
 
+
 # xml schema笔记
 
 ## 构造器（Constructeurs de types）
