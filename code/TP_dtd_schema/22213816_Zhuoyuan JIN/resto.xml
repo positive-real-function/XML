@@ -1,0 +1,66 @@
+<!-- This XML file does not appear to have any style information associated with it. The document
+tree is shown below. -->
+<!-- <carte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="resto.xsd"> -->
+<!DOCTYPE carte [
+    <!ELEMENT carte (plat+,menu+)>
+    <!ELEMENT plat (nom,remarque?,recette)>
+    <!ATTLIST plat
+        ref ID #REQUIRED
+        prix CDATA #REQUIRED>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT remarque (#PCDATA)>
+    <!ELEMENT recette (#PCDATA|action|ingredient)*>
+    <!ELEMENT action (#PCDATA)>
+    <!ELEMENT ingredient (#PCDATA)>
+
+    <!ELEMENT menu (prix,composant+)>
+    <!ATTLIST menu nom CDATA #REQUIRED>
+    <!ELEMENT prix (#PCDATA)>
+    <!ELEMENT composant EMPTY>
+    <!ATTLIST composant plat IDREF #REQUIRED>
+]>
+
+
+<carte>
+    <plat ref="bb01" prix="9.45">
+        <nom>Boeuf bourguignon</nom>
+        <recette>
+            <action>Trancher</action> la <ingredient>viande de boeuf</ingredient> en morceaux ... </recette>
+    </plat>
+    <plat ref="br01" prix="13.70">
+        <nom>Bar au riz safrané</nom>
+        <remarque>Sauce aux baies rouges</remarque>
+        <recette>
+            <action>Cuire</action> au four à 190°C le <ingredient>filet de bar</ingredient> ... </recette>
+    </plat>
+    <plat ref="tm01" prix="3.20">
+        <nom>Tomate mozzarella</nom>
+        <recette>
+            <action>Couper</action> les <ingredient>tomates</ingredient> et la <ingredient>
+            mozarrella</ingredient> en tranches fines ... </recette>
+    </plat>
+    <plat ref="cb01" prix="4.00">
+        <nom>Crème brulée</nom>
+        <recette>
+            <action>Mélanger</action> les <ingredient>oeufs</ingredient> et le <ingredient>sucre</ingredient>
+            ... </recette>
+    </plat>
+    <plat ref="fg01" prix="6.30">
+        <nom>Foie gras</nom>
+        <remarque>A la truffe</remarque>
+        <recette />
+    </plat>
+    <menu nom="Midi">
+        <prix>15.50</prix>
+        <composant plat="tm01" />
+        <composant plat="bb01" />
+        <composant plat="cb01" />
+    </menu>
+    <menu nom="Gastronomique">
+        <prix>21.50</prix>
+        <composant plat="fg01" />
+        <composant plat="br01" />
+        <composant plat="cb01" />
+    </menu>
+</carte>

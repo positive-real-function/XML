@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- 1gare -->
+    <xsd:element name='gare' type='GareType'>
+        <xsd:unique name='usager_id'>
+            <xsd:selector xpath="usager"/>
+            <xsd:field xpath="@id"/>
+        </xsd:unique>
+
+        <xsd:keyref name='resaUsager_id' refer="usager_id">
+            <xsd:selector xpath="train/voiture/resa"/>
+            <xsd:field xpath="@id"/>
+        </xsd:keyref>
+    </xsd:element>
+
+    <!-- gare -->
+    <xsd:complexType name='GareType'>
+        <xsd:sequence >
+            <xsd:element name='train' type="TrainType" minOccurs='1' maxOccurs="unbounded"/>
+            <xsd:element name='usager' type='UsagerType' minOccurs='1' maxOccurs='unbounded'/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- 2train -->
+    <xsd:complexType name="TrainType">
+        <xsd:sequence>
+            <xsd:element name='voiture' type='VoitureType' minOccurs="1" maxOccurs='unbounded'/>
+            <xsd:element name='commentaire' type='CommentaireType' minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="numero" type="xsd:string" use="required"/>
+        <xsd:attribute name="type" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+
+    <!-- 3voiture -->
+    <xsd:complexType name="VoitureType">
+        <xsd:sequence>
+            <xsd:element name="resa" type="ResaType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name='bar' type="BarType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="numero" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- resa -->
+    <xsd:complexType name="ResaType">
+        <xsd:attribute name="numero" type="xsd:string"/>
+        <xsd:attribute name="id" type="xsd:string"/>
+    </xsd:complexType>
+
+     <!-- bar -->
+    <xsd:complexType name="BarType">
+        <xsd:attribute name="service" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- 3commentaire -->
+    <xsd:complexType name="CommentaireType" mixed="true">
+        <xsd:choice>
+            <xsd:element name="numero" type='xsd:string'/>
+        </xsd:choice>
+    </xsd:complexType>
+
+
+
+     <!-- 2usager -->
+    <xsd:complexType name='UsagerType'>
+        <xsd:sequence>
+            <xsd:element name="prenom" type="xsd:string"/>
+            <xsd:element name="nom" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    </xsd:complexType>
+
+
+</xsd:schema>

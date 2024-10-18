@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE options SYSTEM "options.dtd"> -->
+<options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation='options.xsd'>
+    <cours id="c1" titre="XML">
+        <responsable>D. Vodislav</responsable>
+        <description>
+            Ce cours permet de 
+            <objectif>découvrir le format XML</objectif> 
+            et 
+            <objectif>maitriser les langages liés à XML</objectif>
+            . Prérequis : 
+            <prerequis>programmation Java</prerequis>
+             et 
+            <prerequis>HTML</prerequis>
+        </description>
+        <seance no="1" date="20/09/2019">XML : les bases</seance>
+        <!-- ... -->
+    </cours>
+    <cours id="c2" titre="Developing mobile applications">
+        <responsable>D. Kotzinos</responsable>
+        <description>...</description>
+        <seance no="1" date="20/09/2019">Introduction</seance>
+        <!-- ... -->
+        <remarque>Enseignement en anglais</remarque>
+    </cours>
+    <!-- ... -->
+    <étudiant numéro="n123456">
+        <nom>Philippe Dupont</nom>
+        <option cours="c1" note="14" />
+        <!-- ... -->
+        <absence type="justifiée">2019-09-27</absence>
+        <!-- ... -->
+    </étudiant>
+    <!-- ... -->
+</options>

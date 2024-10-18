@@ -1,0 +1,17 @@
+<!ELEMENT options (cours+,étudiant+)>
+<!ELEMENT cours (responsable,description,séance*,remarque?)>
+<!ATTLIST cours id ID #REQUIRED titre CDATA #REQUIRED>
+<!ELEMENT responsable (#PCDATA)>
+<!ELEMENT description (#PCDATA|objectif|prérequis)*>
+<!ELEMENT objectif (#PCDATA)>
+<!ELEMENT prérequis (#PCDATA)>
+<!ELEMENT séance (#PCDATA)>
+<!ATTLIST séance no CDATA #REQUIRED date CDATA #REQUIRED>
+<!ELEMENT remarque (#PCDATA)>
+<!ELEMENT étudiant (nom,option,absence?)>
+<!ATTLIST étudiant numéro CDATA #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT option EMPTY>
+<!ATTLIST option cours IDREF #REQUIRED note CDATA #REQUIRED>
+<!ELEMENT absence (#PCDATA)>
+<!ATTLIST absence type CDATA #REQUIRED>

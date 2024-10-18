@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name='options' type='OptionsType'>
+        <xsd:key name="ID_Cours">
+            <xsd:selector xpath='cours'/>
+            <xsd:field xpath="@id"/>
+        </xsd:key>
+
+        <xsd:keyref name="Option_ID" refer="ID_Cours">
+            <xsd:selector xpath='option'/>
+            <xsd:field xpath="@cours"/>
+        </xsd:keyref>
+    </xsd:element>
+
+
+    <!-- options -->
+    <xsd:complexType name='OptionsType'>
+        <xsd:sequence>
+            <xsd:element name='cours' type='CoursType' minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element name="étudiant" type="EtudiantType"/>
+        </xsd:sequence>
+    </xsd:complexType> 
+
+
+    <!-- cours -->
+    <xsd:complexType name='CoursType'>
+        <xsd:sequence>
+            <xsd:element name='responsable' type='xsd:string'/>
+            <xsd:element name="description" type="DescriptionType"/>
+            <xsd:element name="seance" type="SéanceType" minOccurs='1' maxOccurs='unbounded'/>
+            <xsd:element name="remarque" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID" use="required"/>
+        <xsd:attribute name="titre" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- description -->
+    <xsd:complexType name="DescriptionType" mixed="true">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="objectif" type="xsd:string"/>
+            <xsd:element name="prerequis" type="xsd:string"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <!-- seance -->
+    <xsd:complexType name="SéanceType">
+        <xsd:simpleContent>
+            <xsd:extension base='xsd:string'>
+                <xsd:attribute name="no" type="xsd:int"/>
+                <xsd:attribute name="date" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+
+
+    <!-- etudiant -->
+    <xsd:complexType name="EtudiantType">
+        <xsd:sequence>
+            <xsd:element name="nom" type="xsd:string"/>
+            <xsd:element name="option" type="OptionType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="absence" type="AbsentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="numéro" type="xsd:ID"/>
+    </xsd:complexType>
+
+    <!-- option -->
+    <xsd:complexType name="OptionType">
+        <xsd:attribute name="cours" type="xsd:IDREF" use="required"/>
+        <xsd:attribute name="note" type="xsd:int" use="required"/>
+    </xsd:complexType>
+    
+    <!-- absence -->
+    <xsd:complexType name="AbsentType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:date">
+                <xsd:attribute name="type" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+</xsd:schema>

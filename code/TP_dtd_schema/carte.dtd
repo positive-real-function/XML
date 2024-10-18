@@ -1,0 +1,14 @@
+<!ELEMENT carte (plat+,menu+)>
+<!ELEMENT plat (nom,remarque?,recette)>
+<!ATTLIST plat ref ID #REQUIRED prix CDATA #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT remarque (#PCDATA)>
+<!ELEMENT recette (#PCDATA|action|ingredient)*>
+<!ELEMENT action (#PCDATA)>
+<!ELEMENT ingredient (#PCDATA)>
+
+<!ELEMENT menu (prix,composant+)>
+<!ATTLIST menu nom CDATA #REQUIRED>
+<!ELEMENT prix (#PCDATA)>
+<!ELEMENT composant EMPTY>
+<!ATTLIST composant plat IDREF #REQUIRED>

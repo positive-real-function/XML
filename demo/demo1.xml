@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<root-element>
+
+<!-- XML 一定要有根节点 root-->
+
+<!-- 大小写敏感-->
+
+<!-- 遇到特殊字符，比如说“<”需要使用实体转义-->
+<tr>小于：&lt; less than</tr>
+<tr>大于：&gt; greater than</tr>
+<tr>and &amp; ampersand</tr>
+<tr>撇号 单引号 &apos; apostrophe</tr>
+<tr>双引号 &quot; quotation mark</tr>
+
+<!-- CDATA-->
+<![CDATA[写在里面的内容原封不动的输出]]>
+
+</root-element>

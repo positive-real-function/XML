@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="carte" type="CarteType">
+
+        <xsd:key name="ID_Plat">
+            <xsd:selector xpath="plat"/>
+            <xsd:field xpath="@ref"/>
+        </xsd:key>
+            
+        <xsd:keyref name="ID_Composant" refer="ID_Plat">
+            <xsd:selector xpath="menu/composant"/>
+            <xsd:field xpath="@plat"/>
+        </xsd:keyref>
+
+    </xsd:element>
+
+
+    <!-- carte -->
+    <xsd:complexType name="CarteType">
+        <xsd:sequence>
+            <xsd:element name="plat" type="PlatType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="menu" type="MenuType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- plat -->
+    <xsd:complexType name="PlatType">
+        <xsd:sequence>
+            <xsd:element name="nom" type="xsd:string"/>
+            <xsd:element name="remarque" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="recette" type="RecetteType"/>
+        </xsd:sequence>
+        <xsd:attribute name="ref" type="xsd:ID" use="required"/>
+        <xsd:attribute name="prix" type="xsd:decimal" use="required"/>
+    </xsd:complexType>
+
+    <!-- recette -->
+    <xsd:complexType name="RecetteType" mixed="true">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="action" type="xsd:string"/>
+            <xsd:element name="ingredient" type="xsd:string"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <!-- menu -->
+    <xsd:complexType name="MenuType">
+        <xsd:sequence>
+            <xsd:element name="prix" type="xsd:decimal"/>
+            <xsd:element name="composant" type="ComposantType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="nom" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <!-- composant -->
+    <xsd:complexType name="ComposantType">
+        <xsd:attribute name="plat" type="xsd:IDREF" use="required"/>
+    </xsd:complexType>
+
+</xsd:schema>

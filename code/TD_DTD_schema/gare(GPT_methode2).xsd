@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="gare">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="train" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="voiture" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="resa" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="numero" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="commentaire" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="numero" type="xs:string" use="required"/>
+                        <xs:attribute name="type" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="usager" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="prenom" type="xs:string"/>
+                            <xs:element name="nom" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="trainid">
+            <xs:selector xpath="train"/>
+            <xs:field xpath="@numero"/>
+        </xs:unique>
+        <xs:key name="usagerid">
+            <xs:selector xpath="usager"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:keyref name="usagerref" refer="usagerid">
+            <xs:selector xpath="resa"/>
+            <xs:field xpath="@id"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>
