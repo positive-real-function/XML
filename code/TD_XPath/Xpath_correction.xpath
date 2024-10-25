@@ -1,0 +1,14 @@
+//film/titre
+//film[realisateur='Michel Blanc']/titre
+//film/@type
+//film/role[acteur='Michel Blanc']
+//film/role[1]/acteur
+//producteur[nom='Yves Rousset-Rouard']/following-sibling::producteur[1]/nom
+//film[realisateur='Patrice Leconte']/role[acteur='Michel Blanc']/preceding-sibling::role/acteur
+//film[role/acteur='Thierry Lhermite' and 'Michel Blanc']/realisateur
+//film[count(role)>5]/titre
+/cinema/film[realisateur=role/acteur]/realisateur
+//producteur[film/@ref=/cinema/film[@type='comédie']/@id]/nom
+/cinema/film[not(prix)]/titre
+/cinema/film/role[nom='Morin']/acteur
+
