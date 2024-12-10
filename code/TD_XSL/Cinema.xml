@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--This XML file does not appear to have any style information associated with it. The document tree is shown below.-->
+
+<?xml-stylesheet type="text/xsl" href="Cinema.xsl"?>
+<cinema>
+    <film id="lb78" type="comédie">
+        <titre>Les Bronzés</titre>
+        <annee>1978</annee>
+        <realisateur>Patrice Leconte</realisateur>
+        <role>
+            <nom>Popeye</nom>
+            <acteur>Thierry Lhermite</acteur>
+        </role>
+        <role>
+            <nom>Nathalie Morin</nom>
+            <acteur>Josiane Balasko</acteur>
+        </role>
+        <role>
+            <nom>Bobo</nom>
+            <acteur>Louis Rego</acteur>
+        </role>
+        <role>
+            <nom>Gigi</nom>
+            <acteur>Marie-Anne Chazel</acteur>
+        </role>
+        <role>
+            <nom>Jean-Claude Dusse</nom>
+            <acteur>Michel Blanc</acteur>
+        </role>
+        <role>
+            <nom>Bernard Morin</nom>
+            <acteur>Gérard Jugnot</acteur>
+        </role>
+    </film>
+    <film id="gf94" type="comédie">
+        <titre>Grosse fatigue</titre>
+        <annee>1994</annee>
+        <realisateur>Michel Blanc</realisateur>
+        <role>
+            <nom>Patrick Olivier</nom>
+            <acteur>Michel Blanc</acteur>
+        </role>
+        <role>
+            <nom>Carole Bouquet</nom>
+            <acteur>Carole Bouquet</acteur>
+        </role>
+        <prix>Cannes, meilleur scénario</prix>
+    </film>
+    <film id="mh89" type="drame">
+        <titre>Monsieur Hire</titre>
+        <annee>1989</annee>
+        <realisateur>Patrice Leconte</realisateur>
+        <role>
+            <nom>Monsieur Hire</nom>
+            <acteur>Michel Blanc</acteur>
+        </role>
+        <role>
+            <nom>Alice</nom>
+            <acteur>Sandrine Bonnaire</acteur>
+        </role>
+        <role>
+            <nom>Emile</nom>
+            <acteur>Luc Thuiller</acteur>
+        </role>
+        <prix>César du meilleur son</prix>
+    </film>
+    <producteur>
+        <nom>Daniel Toscan du Plantier</nom>
+        <film ref="gf94"/>
+    </producteur>
+    <producteur>
+        <nom>Yves Rousset-Rouard</nom>
+        <film ref="lb78"/>
+    </producteur>
+    <producteur>
+        <nom>Philippe Carcassonne</nom>
+        <film ref="mh89"/>
+    </producteur>
+    <producteur>
+        <nom>René Cleitman</nom>
+        <film ref="mh89"/>
+    </producteur>
+</cinema>

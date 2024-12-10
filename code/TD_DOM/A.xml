@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<A>
+    <B xmlns="http://a.b.c/" attb="abc"> <C attc="bcd"/>
+        <p:D xmlns:p="http://c.d.e/">
+            <p:E atte="def">
+                <F/>
+                <p:G xmlns:p="http://f.g.h/">
+                    <p:H p:atth="ghi"/>
+                </p:G>
+            </p:E>
+            <I p:atti="hij"/>
+        </p:D>
+    </B>
+    <J attj="ijk"/>
+    <q:K xmlns:q="http://j.k.l/">
+        <L attl="klm">
+            <p:L/>
+        </L>
+    </q:K>
+</A>
+

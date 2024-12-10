@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="test.xsl"?>
+<cinema>
+    <film id="lb78">
+        <titre>Les Bronzés</titre>
+        <annee>1978</annee>
+        <realisateur>Patrice Leconte</realisateur>
+        <role>
+            <nom>Popeye</nom>
+            <acteur>Thierry Lhermite</acteur>
+        </role>
+    </film>
+</cinema>
