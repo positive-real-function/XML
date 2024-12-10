@@ -1,0 +1,12 @@
+<ARTISTES>
+    <ARTISTE id="3">
+        <ARTNOM>Hitchcock</ARTNOM>
+        <ARTPNOM>Alfred</ARTPNOM>
+        <ANNEENAISS>1899</ANNEENAISS>
+    </ARTISTE>
+    <ARTISTE id="5">
+        <ARTNOM>Weaver</ARTNOM>
+        <ARTPNOM>Sigourney</ARTPNOM>
+    </ARTISTE> 
+    ... 
+</ARTISTES>

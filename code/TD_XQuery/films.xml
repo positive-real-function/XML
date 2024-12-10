@@ -1,0 +1,22 @@
+<FILMS>
+    <FILM annee="1958">
+        <TITRE>Vertigo</TITRE>
+        <GENRE>Drame</GENRE>
+        <PAYS>USA</PAYS>
+        <MES idref="3" />
+        <ROLES>
+            <ROLE>
+                <PRENOM>James</PRENOM>
+                <NOM>Stewart</NOM>
+                <INTITULE>John Ferguson</INTITULE>
+            </ROLE>
+            <ROLE>
+                <PRENOM>Kim</PRENOM>
+                <NOM>Novak</NOM>
+                <INTITULE>Madeleine Elster</INTITULE>
+            </ROLE>
+        </ROLES>
+        <RESUME>Scottie Ferguson, ancien inspecteur de police...</RESUME>
+    </FILM> 
+    ... 
+</FILMS>
