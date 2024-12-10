@@ -59,7 +59,6 @@
     </xsd:complexType>
 
 
-
      <!-- 2usager -->
     <xsd:complexType name='UsagerType'>
         <xsd:sequence>

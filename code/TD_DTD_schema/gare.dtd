@@ -17,3 +17,6 @@
 <!ATTLIST usager id ID #REQUIRED>
 <!ELEMENT prenom (#PCDATA)>
 <!ELEMENT nom (#PCDATA)>
+
+
+
